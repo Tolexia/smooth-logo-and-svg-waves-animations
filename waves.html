@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * 
+        {
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        html, body
+        {
+            height: 100%;
+            width: 100%;
+        }
+        body 
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: bisque;
+        }
+        h1
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10rem;
+            color: #20202058;
+        }
+        .main 
+        {
+            height: 80%;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .animated {
+            animation: up-down 2s ease-in-out infinite alternate-reverse both;
+        }
+        .main img {
+            -webkit-user-drag: none;
+            filter:drop-shadow(0 15px 20px rgba(0,0,0,.37));
+            user-select: none;
+        }
+        .bottom
+        {
+            width: 100%;
+        }
+        .hero-waves {
+            display: block;
+            margin-top: 60px;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            position: relative;
+        }
+        .wave1 use {
+            -webkit-animation: move-forever1 10s linear infinite;
+            animation: move-forever1 10s linear infinite;
+            -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+        }
+        
+        .wave2 use {
+            -webkit-animation: move-forever2 8s linear infinite;
+            animation: move-forever2 8s linear infinite;
+            -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+        }
+        .wave3 use {
+            -webkit-animation: move-forever3 6s linear infinite;
+            animation: move-forever3 6s linear infinite;
+            -webkit-animation-delay: -2s;
+            animation-delay: -2s;
+        }
+        @keyframes up-down {
+            0% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        @keyframes move-forever1 {
+            0% {
+                transform: translate(85px,0%);
+            }
+            100% {
+                transform: translate(-90px,0%);
+            }
+        }
+        @keyframes move-forever2 {
+            0% {
+                transform: translate(-90px,0%);
+            }
+
+            100% {
+                transform: translate(85px,0%);
+            }
+        }
+        @keyframes move-forever3 {
+            0% {
+                transform: translate(-90px,0%);
+            }
+
+            100% {
+                transform: translate(85px,0%);
+            }
+        }
+    </style>
+    <section class="main">
+        <h1>Zen</h1>
+        <img class="animated" src="./yinyang.png" style="max-width: 80vw;width: 500px;height: auto;" alt="">
+    </section>
+    <div class="bottom">
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </path></defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(32,32,32, .1)">
+            </use></g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(32,32,32, .2)">
+            </use></g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#202020">
+            </use></g>
+        </svg>
+        <div style="background-color: #202020;height: 5em;"></div>
+    </div>
+</body>
+</html>
